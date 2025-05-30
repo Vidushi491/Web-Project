@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Card Fraud Detection</title>
+  <link rel="stylesheet" href="credit-card.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Credit Card Fraud Detection</h1>
+    
+    <div class="form-section">
+      <form id="creditCardForm">
+        <label for="cardType">Card Type</label>
+        <select id="cardType" name="cardType" required>
+          <option value="">--Select--</option>
+          <option value="debit">Debit</option>
+          <option value="credit">Credit</option>
+        </select>
+
+        <label for="amount">Transaction Amount</label>
+        <input type="number" id="amount" name="amount" required placeholder="Enter amount">
+
+        <label for="location">Transaction Location</label>
+        <input type="text" id="location" name="location" required placeholder="City or Country">
+
+        <label for="time">Transaction Time</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="merchant">Merchant Name</label>
+        <input type="text" id="merchant" name="merchant" required placeholder="e.g. Amazon">
+
+        <button type="submit">Check for Fraud</button>
+      </form>
+    </div>
+
+    <div class="result-section" id="resultSection">
+      <h2>Result</h2>
+      <p id="result">Prediction will appear here...</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("creditCardForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("result").textContent = "Prediction: Genuine ✅ (Connect to backend)";
+    });
+  </script>
+</body>
+</html>

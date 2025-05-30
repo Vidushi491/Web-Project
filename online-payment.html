@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Payment Fraud Detection</title>
+  <link rel="stylesheet" href="online-payment.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Online Payment Fraud Detection</h1>
+    
+    <div class="form-section">
+      <form id="fraudForm">
+        <label for="type">Transaction Type</label>
+        <select id="type" name="type" required>
+          <option value="">--Select--</option>
+          <option value="CASH_OUT">CASH_OUT</option>
+          <option value="TRANSFER">TRANSFER</option>
+          <option value="DEBIT">DEBIT</option>
+        </select>
+
+        <label for="amount">Transaction Amount</label>
+        <input type="number" id="amount" name="amount" required placeholder="Enter transaction amount">
+
+        <label for="oldbalanceOrg">User's Old Balance</label>
+        <input type="number" id="oldbalanceOrg" name="oldbalanceOrg" required placeholder="Enter old balance of user">
+
+        <label for="newbalanceOrg">User's New Balance</label>
+        <input type="number" id="newbalanceOrg" name="newbalanceOrg" required placeholder="Balance after transaction">
+
+        <label for="oldbalanceDest">Recipient's Old Balance</label>
+        <input type="number" id="oldbalanceDest" name="oldbalanceDest" required placeholder="Recipient's old balance">
+
+        <label for="newbalanceDest">Recipient's New Balance</label>
+        <input type="number" id="newbalanceDest" name="newbalanceDest" required placeholder="Recipient's balance after transaction">
+
+        <button type="submit">Check for Fraud</button>
+      </form>
+    </div>
+
+    <div class="result-section" id="resultSection">
+      <h2>Result</h2>
+      <p id="result">Prediction will appear here...</p>
+    </div>
+  </div>
+
+  <script>
+    // Replace this logic later with backend call
+    document.getElementById("fraudForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const result = document.getElementById("result");
+      result.textContent = "Prediction: Genuine ✅ (Replace with backend response)";
+    });
+  </script>
+</body>
+</html>
